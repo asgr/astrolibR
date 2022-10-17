@@ -26,7 +26,7 @@ co_refract=function(
                                         #calculate initial refraction guess
       dr = co_refract_forward(a[i],p=p[i],t=t[i])
       cur = a[i] + dr # guess of observed location
-      while(t) {
+      while(TRUE) {
         last = cur
         dr = co_refract_forward(cur,p=p[i],t=t[i])
         cur= a[i] + dr
