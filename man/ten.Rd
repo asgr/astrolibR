@@ -6,7 +6,7 @@
 \description{Convert a sexigesimal number or string to decimal
 }
 \usage{
-ten(dd, mm=0, ss=0)   
+ten(dd, mm=0, ss=0)
 }
 
 \arguments{
@@ -14,13 +14,13 @@ ten(dd, mm=0, ss=0)
 or string giving sexigesimal quantity separated by
 spaces or colons; e.g.. "10 23 34" or "-3:23:45.2".}
 \item{mm}{minutes, integer (0-60), scalar (default = 0)}
-\item{ss}{seconds, integer (0-60), scalar (default = 0)} 
+\item{ss}{seconds, integer (0-60), scalar (default = 0)}
 	}
 \details{
 The output is a real number \preformatted{= dd + mm/60. + ss/3600}. Inverse of the \emph{sixty} function.  The function \emph{tenv} can be used when dealing with a vector of sexigesimal quantities.
 	}
 \value{
-\item{}{decimal equivalent of input sexigesimal quantity, real, scalar}
+Decimal equivalent of input sexigesimal quantity, real, scalar
 }
 \author{
 Written   W. Landsman        Raytheon ITSS       2000 \cr

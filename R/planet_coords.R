@@ -1,7 +1,3 @@
-# source('helio.R')
-# source('euler.R')
-# source('juldate.R')
-
 planet_coords = function( date, planet=planet, jd = FALSE) {
 
     radeg = 180/pi
@@ -11,13 +7,12 @@ planet_coords = function( date, planet=planet, jd = FALSE) {
         jj = date
         if(length(jj)>0 && length(planet)>1 )
             stop('A planet name must be supplied for vector dates')
-    }
-    else {
+    } else {
         jj = juldate(date)
         jj = jj + 2400000
     }
     if(!missing(planet) ){
-        planetlist = c('mercury','venus','mars',
+        planetlist = c('mercury','venus','earth','mars',
         'jupiter','saturn','uranus','neptune','pluto')
         index = which(planetlist==tolower(planet))
         if(length(index)==0 ) stop(paste('unrecognized planet:' + planet))
@@ -38,7 +33,6 @@ planet_coords = function( date, planet=planet, jd = FALSE) {
     lone = as.numeric(tmp$hlong)
     late = as.numeric(tmp$hlat)
 
-    browser("End")
     x = rad * cos(lat) * cos(lon) - rade * cos(late) * cos(lone)
     y = rad * cos(lat) * sin(lon) - rade * cos(late) * sin(lone)
     z = rad * sin(lat)            - rade * sin(late)
